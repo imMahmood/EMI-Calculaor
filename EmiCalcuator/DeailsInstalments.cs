@@ -10,20 +10,22 @@ using System.Windows.Forms;
 
 namespace EmiCalcuator
 {
-    public partial class Form2 : Form
+    public partial class DeailsInstalments : Form
     {
         DataTable dataTable;
 
         List<Model> models = new List<Model>();
-        public Form2(List<Model> a)
+        public DeailsInstalments(List<Model> a)
         {
             this.models = a;
             InitializeComponent();
+            dataGridView.ClearSelection();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            dataGridView.ClearSelection();
+            
+           
             dataTable = new DataTable();
             dataTable.Columns.Add("Sno");
                 dataTable.Columns.Add("Intrest amount");
@@ -46,6 +48,14 @@ namespace EmiCalcuator
 
         private void cancel_buttton_Click(object sender, EventArgs e)
         {
+            while (dataGridView.Rows.Count > 1)
+            {
+                dataGridView.Rows.RemoveAt(0);
+                dataGridView.Refresh();
+            }
+
+            models.Clear();
+
             this.Close();
         }
     }

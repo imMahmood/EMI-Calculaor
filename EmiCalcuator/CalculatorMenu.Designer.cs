@@ -1,6 +1,6 @@
 ﻿namespace EmiCalcuator
 {
-    partial class Form1
+    partial class CalculatorMenu
     {
         /// <summary>
         /// Required designer variable.

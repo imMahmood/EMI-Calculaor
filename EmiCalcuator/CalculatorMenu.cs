@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace EmiCalcuator
 {
-    public partial class Form1 : Form
+    public partial class CalculatorMenu : Form
     {
 
         List<Model> ts = new List<Model>();
 
-        public Form1()
+        public CalculatorMenu()
         {
             InitializeComponent();
 
@@ -73,7 +73,7 @@ namespace EmiCalcuator
 
                     }
 
-                    Form2 form2 = new Form2(ts);
+                    DeailsInstalments form2 = new DeailsInstalments(ts);
                     form2.BringToFront();
                     form2.ShowDialog();
 
